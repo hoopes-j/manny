@@ -1,0 +1,26 @@
+{
+  "name": "manny",
+  "version": "1.0.0",
+  "description": "manny",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"check please\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoopes-j/manny.git"
+  },
+  "author": "Manny Hoopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoopes-j/manny/issues"
+  },
+  "homepage": "https://github.com/hoopes-j/manny#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "sass": "^1.34.0",
+    "typescript": "^4.3.2"
+  }
+}
