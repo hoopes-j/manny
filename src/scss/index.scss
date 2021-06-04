@@ -1,0 +1,15 @@
+
+
+.container {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    .container-child {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+    }
+}
