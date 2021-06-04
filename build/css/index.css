@@ -56,7 +56,7 @@ html {
 .sports img {
   width: 30%; }
 
-@media only screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
   .sports img {
     width: 80%; } }
 
