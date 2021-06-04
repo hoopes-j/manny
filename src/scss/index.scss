@@ -1,4 +1,5 @@
 @import './mixins/mixins';
+@import './partials/manfreid.scss';
 
 html {
     @include html-body();

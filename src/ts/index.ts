@@ -1,3 +1,5 @@
+//import second from './second/second'
+
 
 function main() {
     const sports: HTMLElement = document.querySelector('.sports');
@@ -6,6 +8,13 @@ function main() {
         window.location.pathname = '/enter';
     })
 
-}
+};
 
-main();
+
+// if (window.location.pathname = "") {
+//     main();
+// }
+
+// if (window.location.pathname = "./folder/second.ts") {
+//     second.main();
+// }

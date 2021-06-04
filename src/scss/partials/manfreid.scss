@@ -1,0 +1,95 @@
+@import '../mixins/win95';
+
+.manfreid-alert {
+    width: 550px;
+    height: auto;
+    background-color: $win95-base-gray;
+    border: 5px outset;
+
+    &__header {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        background-color: $win95-base-blue;
+
+        &-title {
+            width: auto;
+            color: white;
+            padding: 10px;
+            margin: 0px;
+        }
+
+        &-button {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 30px;
+            height: 30px;
+            font-size: 18px;
+            padding-top: 3px;
+            border: 3px outset;
+            outline: black;
+            box-shadow: 2px 2px 2px 0px #000000;
+            &:hover {
+                border: 3px inset;
+                box-shadow: 2px 2px 2px 0px #000000;
+                outline: black;
+            }
+        }
+
+    }
+
+    &__body {
+
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    &__message {
+        margin-top: 20px;
+        width: 100%;
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        img {
+            margin-right: 20px;
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &__button-container {
+        bottom: 30px;
+        width: 100%;
+        height: 70px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            height: 50px;
+            min-width: 100px;
+            margin-left: 10px;
+            margin-right: 10px;
+            border: 3px outset;
+            outline: black;
+            box-shadow: 2px 2px 2px 0px #000000;
+            &:hover {
+                border: 3px inset;
+                box-shadow: 2px 2px 2px 0px #000000;
+                outline: black;
+            }
+        }
+    }
+
+
+}
+
