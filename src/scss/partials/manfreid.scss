@@ -30,6 +30,8 @@
             border: 3px outset;
             outline: black;
             box-shadow: 2px 2px 2px 0px #000000;
+            color: $win95-base-gray;
+            background-color: $win95-base-gray; 
             &:hover {
                 border: 3px inset;
                 box-shadow: 2px 2px 2px 0px #000000;
