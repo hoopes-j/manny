@@ -1,3 +1,11 @@
-const container: HTMLElement = document.querySelector('.container');
 
-container.style.backgroundColor = 'green';
+function main() {
+    const sports: HTMLElement = document.querySelector('.sports');
+
+    sports.addEventListener('click', () => {
+        window.location.pathname = '/enter';
+    })
+
+}
+
+main();

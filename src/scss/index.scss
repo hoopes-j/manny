@@ -1,8 +1,19 @@
-html, body {
-    margin: 0px;
-    width: 100%;
-    height: 100%;
+@import './mixins/mixins';
+
+html {
+    @include html-body();
+    overflow: hidden;
+    body {
+        @include html-body();
+        overflow: auto;
+    }
 }
+
+.img {
+    position: absolute;
+}
+
+
 
 .container {
     position: absolute;
@@ -14,8 +25,9 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    background-color: green;
     .container-child {
+        position: relative;
         display: inherit;
         justify-content: inherit;
         align-items: inherit;
@@ -25,7 +37,8 @@ html, body {
     }
 }
 
-.image {
+.halloween {
+    z-index: 70;
     position: absolute;
     left: 0;
     animation-duration: 3s;
@@ -36,6 +49,10 @@ html, body {
 }
 
 .manny-header {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
     animation-duration: 1s;
     animation-name: flashText;
     animation-iteration-count: infinite;
@@ -43,12 +60,23 @@ html, body {
     animation-timing-function: linear; 
 }
 
+.sports img {
+    width: 30%;
+}
+
+
+@media only screen and (max-width: 400px) {
+    .sports img{
+        width: 80%;
+    }
+}
+
 @keyframes flashText {
     from {
         color: blue;
     }
     to {
-        color: white;
+        color: yellow;
     }
 }
 
@@ -62,3 +90,10 @@ html, body {
         top: calc(100% - 183px);
     }
 }
+
+img.word-art {
+    position: absolute;
+    &.rainbow {
+        width: 70%;
+    }
+} 
