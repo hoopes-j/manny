@@ -11,7 +11,8 @@
     "scss-watch": "node-sass --watch ./src/scss -o ./build/css",
     "scss": "node-sass ./src/scss -o ./build/css",
     "live-server": "cd ./build && live-server .",
-    "serve": "node ./scripts/liveServer.js"
+    "serve": "node ./scripts/liveServer.js",
+    "deploy": "git checkout develop && git push && git checkout master && git merge develop && git push"
   },
   "repository": {
     "type": "git",
