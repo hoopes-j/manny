@@ -9,7 +9,7 @@ var curNum = 10;
 function generateRandom() {
     return Math.floor(Math.random() * max);
 }
-function injectAlert() {
+function injectAlert(flag) {
     curNum += 10;
     var alertTemplate = "\n    <div class=\"manfreid-alert\" id=\"alert-" + curNum + "\">\n        <div class=\"manfreid-alert__header\">\n            <h2 class=\"manfreid-alert__header-title\">Warning</h2>\n            <button class=\"manfreid-alert__header-button\">X</button>\n        </div>\n        <div class=\"manfreid-alert__body\">\n            <div class=\"manfreid-alert__icon\"></div>\n            <div class=\"manfreid-alert__message\">\n                <img src=\"https://i.ibb.co/VB8ZBjp/computer.png\">\n                <div>\n                    <p>Welcome to Manny World.</p>\n                </div>\n            </div>\n            <div class=\"manfreid-alert__button-container\">\n                <button class=\"manfreid-alert__button-accept\">Enter</button>        \n                <button class=\"manfreid-alert__button-accept\">Also Enter</button>\n            </div>\n        </div>\n    </div>\n    ";
     var newDiv = document.createElement('div');
@@ -23,11 +23,24 @@ function injectAlert() {
     var buttons = newDiv.querySelectorAll('.manfreid-alert__button-accept');
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function () {
-            injectAlert();
+            move();
         });
     }
     var parent = document.getElementById('alertContainer');
     parent.append(newDiv);
+}
+function move() {
+    var i = 0;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (i == 100) {
+            clearInterval(id);
+        }
+        else {
+            injectAlert();
+            i++;
+        }
+    }
 }
 main();
 //# sourceMappingURL=index.js.map

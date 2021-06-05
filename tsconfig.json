@@ -5,5 +5,10 @@
 		"sourceMap": true,
 		"outDir": "./build/js"
 	},
-	"include": ["./src/ts"]
+	"include": ["./src/ts"],
+	"watchOptions": {
+		"synchronousWatchDirectory": true,
+		"excludeDirectories": ["**/node_modules", "build", "scripts"]
+	}
+
 }

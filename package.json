@@ -6,8 +6,8 @@
   "private": "true",
   "scripts": {
     "test": "echo \"check please\"",
-    "start": "npm-run-all tsc --parallel scss-watch live-server",
-    "tsc": "npx tsc",
+    "start": "npm-run-all --parallel tsc scss-watch live-server",
+    "tsc": "npx tsc && npx tsc --watch",
     "build": "npm run scss && npx tsc",
     "scss-watch": "node-sass --watch ./src/scss -o ./build/css",
     "scss": "node-sass ./src/scss -o ./build/css",

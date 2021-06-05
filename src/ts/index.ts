@@ -16,7 +16,7 @@ function generateRandom() {
     return Math.floor(Math.random() * max);
 }
 
-function injectAlert() {
+function injectAlert(flag?: number) {
     curNum += 10;
     const alertTemplate = `
     <div class="manfreid-alert" id="alert-${curNum}">
@@ -42,7 +42,7 @@ function injectAlert() {
     const newDiv = document.createElement('div');
     newDiv.className = 'floating-alert';
     newDiv.style.bottom = `${curNum}px`;
-    newDiv.style.left = `${curNum/10 + 3}px`; 
+    newDiv.style.left = `${curNum / 10 + 3}px`;
     newDiv.innerHTML = alertTemplate;
     newDiv.querySelector('.manfreid-alert__header-button').addEventListener('click', () => {
         window.location.assign('https://golf.com/');
@@ -50,12 +50,30 @@ function injectAlert() {
     const buttons = newDiv.querySelectorAll('.manfreid-alert__button-accept');
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', () => {
-           injectAlert();
+            move();
         })
     }
     const parent = document.getElementById('alertContainer');
     parent.append(newDiv);
 }
+
+
+
+
+function move() {
+    let i = 0;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (i == 100) {
+        clearInterval(id);
+      } else {
+        injectAlert();
+        i++
+      }
+    }
+}
+
+
 
 
 
