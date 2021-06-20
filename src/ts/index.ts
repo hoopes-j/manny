@@ -10,16 +10,35 @@ function main() {
 };
 
 const max = 50;
-var curNum = 10;
+var curY = 10;
+var curX = 1;
 
 function generateRandom() {
     return Math.floor(Math.random() * max);
 }
+const windowTop: number = window.innerHeight;
+const bottom = 0;
+const windowRight: number = window.innerWidth;
+const windowLeft = 0;
+const right: number = 0;
+const left: number = 1;
+var directionX = right;
+
+const up: number = 0;
+const down: number = 1;
+var directionY = up;
 
 function injectAlert(flag?: number) {
-    curNum += 10;
+    if (curY >= windowTop && directionY == up) directionY = down;
+    else if (curY <= bottom && directionY == down) directionY = up;
+    curY = directionY == up ? curY + 10 : curY - 10;
+
+    if (curX >= windowRight && directionX == right) directionX = left;
+    else if (curX <= windowLeft && directionX == left) directionX = right; 
+    curX = directionX == right ? curX + 2 : curX - 2;
+    
     const alertTemplate = `
-    <div class="manfreid-alert" id="alert-${curNum}">
+    <div class="manfreid-alert">
         <div class="manfreid-alert__header">
             <h2 class="manfreid-alert__header-title">Warning</h2>
             <button class="manfreid-alert__header-button">X</button>
@@ -41,8 +60,8 @@ function injectAlert(flag?: number) {
     `;
     const newDiv = document.createElement('div');
     newDiv.className = 'floating-alert';
-    newDiv.style.bottom = `${curNum}px`;
-    newDiv.style.left = `${curNum / 10 + 3}px`;
+    newDiv.style.bottom = `${curY}px`;
+    newDiv.style.left = `${curX}px`;
     newDiv.innerHTML = alertTemplate;
     newDiv.querySelector('.manfreid-alert__header-button').addEventListener('click', () => {
         window.location.assign('https://golf.com/');
@@ -64,7 +83,7 @@ function move() {
     let i = 0;
     var id = setInterval(frame, 10);
     function frame() {
-      if (i == 100) {
+      if (i == 1000) {
         clearInterval(id);
       } else {
         injectAlert();
